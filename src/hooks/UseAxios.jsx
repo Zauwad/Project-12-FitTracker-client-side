@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://fitness-tracker-server-red.vercel.app'
+    baseURL: 'http://localhost:5000'
 })
 
 const UseAxios = () => {

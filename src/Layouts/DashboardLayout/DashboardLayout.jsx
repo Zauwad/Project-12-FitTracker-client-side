@@ -67,6 +67,42 @@ const MemberDashboardLayout = () => {
               Booked Trainer
             </NavLink>
 
+            {/* ✅ Trainer-Specific Links */}
+            <div className="border-t flex flex-col border-gray-400 mt-4 pt-4">
+              <NavLink
+                to="/dashboard/manage-slots"
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded hover:bg-gray-200 ${
+                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  }`
+                }
+              >
+                Manage Slots
+              </NavLink>
+
+              <NavLink
+                to="/dashboard/add-slot"
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded hover:bg-gray-200 ${
+                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  }`
+                }
+              >
+                Add New Slot
+              </NavLink>
+
+              <NavLink
+                to="/dashboard/add-forum"
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded hover:bg-gray-200 ${
+                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  }`
+                }
+              >
+                Add New Forum
+              </NavLink>
+            </div>
+
             {/* Admin Links */}
             <div className="border-t flex flex-col border-gray-400 mt-4 pt-4">
               <NavLink

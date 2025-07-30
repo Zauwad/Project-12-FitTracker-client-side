@@ -46,13 +46,22 @@ const Trainers = () => {
                             <p className="text-gray-500 mt-1">🏆 {trainer.experience} Years Experience</p>
 
                             {/* Available Slots */}
-                            <div className="text-sm text-gray-600 mt-2">
+                            <div className="text-sm text-gray-600 mt-2 text-left">
                                 🕒 Available Slots:
-                                <ul className="list-disc list-inside">
-                                    {trainer.availableSlots?.map((slot, i) => (
-                                        <li key={i}>{slot}</li>
-                                    ))}
-                                </ul>
+                                {trainer.availableSlots && trainer.availableSlots.length > 0 ? (
+                                    <ul className="list-disc list-inside mt-1">
+                                        {trainer.availableSlots.map((slot, i) => (
+                                            <li key={i} className="mb-2">
+                                                <strong>{slot.slotName}</strong> - {slot.slotTime} <br />
+                                                Days: {slot.days?.join(", ")} <br />
+                                                Class: {slot.className} <br />
+                                                {slot.otherInfo && <>Info: {slot.otherInfo}</>}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    <p>No available slots.</p>
+                                )}
                             </div>
 
                             {/* Social Icons */}
