@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { useState } from "react";
 import useAuth from "../../../hooks/UseAuth";
 // import { AuthContext } from "../providers/AuthProvider"; // example context for auth
@@ -6,6 +6,7 @@ import useAuth from "../../../hooks/UseAuth";
 const Navbar = () => {
     const { user, logOut } = useAuth();
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate()
 
     const handleLogout = () => {
         logOut();

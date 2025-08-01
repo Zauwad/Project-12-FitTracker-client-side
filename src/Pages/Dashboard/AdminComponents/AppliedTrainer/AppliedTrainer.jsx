@@ -16,7 +16,7 @@ const AppliedTrainer = () => {
         },
     });
 
-    if (isLoading) return <p className="text-center py-10">Loading applications...</p>;
+    if (isLoading) return <p className="text-center py-10 text-black">Loading applications...</p>;
     if (isError) return <p className="text-center py-10 text-red-500">Failed to load applications</p>;
     if (applications.length === 0) return <p className="text-center py-10 text-gray-500">No pending trainer applications.</p>;
 

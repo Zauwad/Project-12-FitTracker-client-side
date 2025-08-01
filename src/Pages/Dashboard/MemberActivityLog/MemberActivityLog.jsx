@@ -20,7 +20,7 @@ const ActivityLog = () => {
     },
   });
 
-  if (isLoading) return <p className="text-center py-10">⏳ Loading activity log...</p>;
+  if (isLoading) return <p className="text-center py-10 text-black">⏳ Loading activity log...</p>;
   if (isError) return <p className="text-center py-10 text-red-500">❌ Failed to load data.</p>;
 
   // ✅ Filter: Only show pending & rejected applicants
@@ -30,7 +30,7 @@ const ActivityLog = () => {
 
   return (
     <section className="max-w-5xl mx-auto py-12 px-6">
-      <h2 className="text-3xl font-bold mb-6 text-center">📋 Trainer Applications Activity Log</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center text-black">📋 Trainer Applications Activity Log</h2>
 
       {filteredApplicants.length === 0 ? (
         <p className="text-center text-gray-500">✅ No pending or rejected applications found.</p>

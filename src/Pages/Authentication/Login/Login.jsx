@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../../hooks/UseAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import UseAxios from "../../../hooks/UseAxios";
@@ -9,6 +9,8 @@ const Login = () => {
     const { signIn } = useAuth();
     const navigate = useNavigate();
     const axiosInstance = UseAxios();
+    const location = useLocation()
+    const from = location.state?.from || '/'
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -34,7 +36,7 @@ const Login = () => {
             });
 
             // ✅ Redirect after a short delay
-            setTimeout(() => navigate("/"), 1500);
+            setTimeout(() => navigate(from), 1500);
 
         } catch (err) {
             console.error("Login failed", err.message);
@@ -89,7 +91,7 @@ const Login = () => {
                 {/* Register Redirect */}
                 <p className="text-center mt-4">
                     New here?
-                    <Link to="/register" className="text-primary font-semibold ml-1 hover:underline">
+                    <Link state={{ from }} to="/register" className="text-primary font-semibold ml-1 hover:underline">
                         Create an account
                     </Link>
                 </p>

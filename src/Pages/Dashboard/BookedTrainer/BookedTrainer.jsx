@@ -52,7 +52,7 @@ const BookedTrainer = () => {
 
   if (isLoading) return <p className="text-center py-6">⏳ Loading booked trainer...</p>;
   if (isError) return <p className="text-center text-red-500">❌ Failed to load booked trainer</p>;
-  if (!bookedTrainers.length) return <p className="text-center">No booked trainers found.</p>;
+  if (!bookedTrainers.length) return <p className="text-center text-black">No booked trainers found.</p>;
 
   return (
     <section className="max-w-5xl mx-auto py-10 px-4">

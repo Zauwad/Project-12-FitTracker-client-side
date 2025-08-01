@@ -26,6 +26,8 @@ import ManageSlots from "../Pages/Dashboard/TrainerComponent/ManageSlots/ManageS
 import AddNewSlot from "../Pages/Dashboard/TrainerComponent/AddNewSlot/AddNewSlot";
 import AddNewForum from "../Pages/Dashboard/AdminComponents/AddNewForum/AddNewForum";
 import BookedTrainer from "../Pages/Dashboard/BookedTrainer/BookedTrainer";
+import ManageAdmin from "../Pages/Dashboard/AdminComponents/ManageAdmin/ManageAdmin";
+import PrivateRoute from "../Routes/PrivateRoute";
 export const trainerDetailsLoader = async ({ params }) => {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/trainers/${params.id}`);
     if (!res.ok) throw new Error("Trainer not found");
@@ -70,7 +72,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/trainer/:trainerId/book",
-                Component: TrainerBookingPage
+                element: <PrivateRoute>
+                    <TrainerBookingPage></TrainerBookingPage>
+                </PrivateRoute>
             },
             {
                 path: "become-trainer",
@@ -78,14 +82,18 @@ export const router = createBrowserRouter([
             },
             {
                 path: "payment",
-                Component: PaymentPage
+                element: <PrivateRoute>
+                    <PaymentPage></PaymentPage>
+                </PrivateRoute>
             },
         ]
     },
 
     {
         path: 'dashboard',
-        Component: DashboardLayout,
+        element: <PrivateRoute>
+            <DashboardLayout></DashboardLayout>
+        </PrivateRoute>,
         children: [
             {
                 index: true,
@@ -118,6 +126,10 @@ export const router = createBrowserRouter([
             {
                 path: 'add-class',
                 Component: AddNewClass
+            },
+            {
+                path: 'manage-admin',
+                Component: ManageAdmin
             },
             {
                 path: 'manage-slots',

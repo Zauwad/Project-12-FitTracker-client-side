@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../../hooks/UseAuth";
 import UseAxios from "../../../hooks/UseAxios";
 import Swal from "sweetalert2";   // ✅ Import SweetAlert2
@@ -8,6 +8,8 @@ const Register = () => {
     const { createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
     const axiosInstance = UseAxios();
+    const location = useLocation()
+    const from = location.state?.from || '/'
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -41,7 +43,7 @@ const Register = () => {
             });
 
             // ✅ Redirect after short delay
-            setTimeout(() => navigate("/"), 1500);
+            setTimeout(() => navigate(from), 1500);
 
         } catch (err) {
             console.error("Registration failed", err.message);
