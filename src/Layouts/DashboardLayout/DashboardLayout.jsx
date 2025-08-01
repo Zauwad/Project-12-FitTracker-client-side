@@ -39,8 +39,7 @@ const MemberDashboardLayout = () => {
             <NavLink
               to="/dashboard/activity-log"
               className={({ isActive }) =>
-                `px-4 py-2 rounded hover:bg-gray-200 ${
-                  isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                 }`
               }
             >
@@ -49,8 +48,7 @@ const MemberDashboardLayout = () => {
             <NavLink
               to="/dashboard/memberprofile"
               className={({ isActive }) =>
-                `px-4 py-2 rounded hover:bg-gray-200 ${
-                  isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                 }`
               }
             >
@@ -59,8 +57,7 @@ const MemberDashboardLayout = () => {
             <NavLink
               to="/dashboard/booked-trainer"
               className={({ isActive }) =>
-                `px-4 py-2 rounded hover:bg-gray-200 ${
-                  isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                 }`
               }
             >
@@ -72,8 +69,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/manage-slots"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -83,8 +79,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/add-slot"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -94,8 +89,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/add-forum"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -108,8 +102,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/subscribers-dashboard"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -118,8 +111,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/all-trainers"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -128,8 +120,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/applied-trainers"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -138,8 +129,7 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/balance"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
@@ -148,12 +138,21 @@ const MemberDashboardLayout = () => {
               <NavLink
                 to="/dashboard/add-class"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded hover:bg-gray-200 ${
-                    isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
                   }`
                 }
               >
                 Add New Class
+              </NavLink>
+
+              <NavLink
+                to="/dashboard/add-forum"
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded hover:bg-gray-200 ${isActive ? "bg-blue-500 text-white" : "text-gray-700"
+                  }`
+                }
+              >
+                Add New Forum
               </NavLink>
             </div>
           </nav>

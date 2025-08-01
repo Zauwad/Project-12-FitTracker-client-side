@@ -24,6 +24,8 @@ import AddNewClass from "../Pages/Dashboard/AdminComponents/AddNewClass/AddNewCl
 import PaymentPage from "../Pages/PaymentPage/PaymentPage";
 import ManageSlots from "../Pages/Dashboard/TrainerComponent/ManageSlots/ManageSlots";
 import AddNewSlot from "../Pages/Dashboard/TrainerComponent/AddNewSlot/AddNewSlot";
+import AddNewForum from "../Pages/Dashboard/AdminComponents/AddNewForum/AddNewForum";
+import BookedTrainer from "../Pages/Dashboard/BookedTrainer/BookedTrainer";
 export const trainerDetailsLoader = async ({ params }) => {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/trainers/${params.id}`);
     if (!res.ok) throw new Error("Trainer not found");
@@ -128,6 +130,14 @@ export const router = createBrowserRouter([
             {
                 path: 'add-slot',
                 Component: AddNewSlot
+            },
+            {
+                path: 'add-forum',
+                Component: AddNewForum
+            },
+            {
+                path: 'booked-trainer',
+                Component: BookedTrainer
             },
 
 
