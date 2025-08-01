@@ -7,12 +7,14 @@ const Classes = () => {
   const axiosInstance = UseAxios();
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState(""); // 🔹 search state
   const limit = 6;
 
+  // ✅ Fetch Classes with search parameter
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["allClasses", page],
+    queryKey: ["allClasses", page, search],
     queryFn: async () => {
-      const res = await axiosInstance.get(`/classes?page=${page}&limit=${limit}`);
+      const res = await axiosInstance.get(`/classes?page=${page}&limit=${limit}&search=${search}`);
       return res.data;
     },
     keepPreviousData: true,
@@ -28,7 +30,21 @@ const Classes = () => {
     <section className="py-16 bg-base-200">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-primary text-center mb-6">🏋️ All Fitness Classes</h2>
-        <p className="text-lg text-gray-600 text-center mb-10">Choose from a variety of classes to achieve your fitness goals!</p>
+        <p className="text-lg text-gray-600 text-center mb-6">Choose from a variety of classes to achieve your fitness goals!</p>
+
+        {/* ✅ Search Bar */}
+        <div className="flex justify-center mb-8">
+          <input
+            type="text"
+            placeholder="🔍 Search classes..."
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              ; // reset to page 1 when searching
+            }}
+            className="input input-bordered w-full max-w-md"
+          />
+        </div>
 
         {/* ✅ Classes Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

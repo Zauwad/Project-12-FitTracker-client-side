@@ -1,23 +1,25 @@
 // src/Pages/Home/Testimonials.jsx
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { FaQuoteLeft, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaQuoteLeft, FaArrowLeft, FaArrowRight, FaStar } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../../../hooks/UseAxios";
 
 const Testimonials = () => {
+    const axiosInstance = UseAxios();
 
-    const axiosInstance = UseAxios()
-
-
-    // eslint-disable-next-line no-unused-vars
+    // ✅ Fetch reviews from reviews collection
     const { data: reviews = [], isLoading, isError } = useQuery({
-        queryKey: ["testimonials"],
+        queryKey: ["reviews"],
         queryFn: async () => {
-            const res = await axiosInstance.get("/testimonials"); // 🔹 Update API base URL if needed
+            const res = await axiosInstance.get("/reviews"); // ✅ updated endpoint
             return res.data;
         },
     });
+
+    if (isLoading) return <p className="text-center py-10">Loading testimonials...</p>;
+    if (isError) return <p className="text-center py-10 text-red-500">Failed to load testimonials</p>;
+
     return (
         <section className="py-16 bg-base-100">
             <div className="max-w-6xl mx-auto px-6 text-center">
@@ -26,7 +28,6 @@ const Testimonials = () => {
                     Hear from our happy users who are achieving their fitness goals with FitTrackerPro.
                 </p>
 
-                {/* ✅ Carousel with custom buttons */}
                 <Carousel
                     showStatus={false}
                     showThumbs={false}
@@ -34,7 +35,7 @@ const Testimonials = () => {
                     autoPlay
                     interval={4000}
                     centerMode
-                    centerSlidePercentage={33.3} // ✅ shows 3 at once
+                    centerSlidePercentage={33.3}
                     swipeable
                     emulateTouch
                     renderArrowPrev={(onClickHandler, hasPrev, label) =>
@@ -62,14 +63,25 @@ const Testimonials = () => {
                 >
                     {reviews.map((r) => (
                         <div
-                            key={r.id}
+                            key={r._id}
                             className="bg-gray-500 shadow-lg rounded-xl p-6 mx-2 flex flex-col justify-between hover:shadow-2xl transition h-full"
                         >
                             <FaQuoteLeft className="text-3xl text-primary mb-4" />
-                            <p className="text-gray-700 italic mb-4">"{r.review}"</p>
+                            <p className="text-gray-700 italic mb-4">"{r.feedback}"</p>
+
+                            {/* ✅ Star Rating */}
+                            <div className="flex justify-center mb-2">
+                                {[...Array(5)].map((_, i) => (
+                                    <FaStar
+                                        key={i}
+                                        className={i < r.rating ? "text-yellow-400" : "text-gray-300"}
+                                    />
+                                ))}
+                            </div>
+
                             <div>
-                                <h4 className="text-lg font-semibold">{r.name}</h4>
-                                <span className="text-sm text-gray-500">{r.role}</span>
+                                <h4 className="text-lg font-semibold">{r.userName}</h4>
+                                <span className="text-sm text-gray-400">Reviewed Trainer: {r.trainerName}</span>
                             </div>
                         </div>
                     ))}

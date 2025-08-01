@@ -31,7 +31,7 @@ const Trainers = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {trainers.map((trainer) => (
                         <div
-                            key={trainer._id} // ✅ use MongoDB _id
+                            key={trainer._id}
                             className="bg-gray-500 shadow-lg rounded-xl p-6 hover:shadow-2xl transition duration-300"
                         >
                             {/* Trainer Image */}
@@ -45,18 +45,19 @@ const Trainers = () => {
                             <h3 className="text-2xl font-bold text-gray-800">{trainer.name}</h3>
                             <p className="text-gray-500 mt-1">🏆 {trainer.experience} Years Experience</p>
 
+                            {/* Days & Classes */}
+                            <div className="text-sm text-gray-600 mt-3 text-left">
+                                <p><strong>📅 Days:</strong> {trainer.availableDays?.join(", ") || "N/A"}</p>
+                                <p><strong>🎯 Classes:</strong> {trainer.expertise?.join(", ") || "N/A"}</p>
+                            </div>
+
                             {/* Available Slots */}
-                            <div className="text-sm text-gray-600 mt-2 text-left">
-                                🕒 Available Slots:
-                                {trainer.availableSlots && trainer.availableSlots.length > 0 ? (
-                                    <ul className="list-disc list-inside mt-1">
+                            <div className="text-sm text-gray-600 mt-3 text-left">
+                                <p className="font-semibold">🕒 Available Slots:</p>
+                                {trainer.availableSlots?.length > 0 ? (
+                                    <ul className="list-disc list-inside">
                                         {trainer.availableSlots.map((slot, i) => (
-                                            <li key={i} className="mb-2">
-                                                <strong>{slot.slotName}</strong> - {slot.slotTime} <br />
-                                                Days: {slot.days?.join(", ")} <br />
-                                                Class: {slot.className} <br />
-                                                {slot.otherInfo && <>Info: {slot.otherInfo}</>}
-                                            </li>
+                                            <li key={i}>{slot}</li>
                                         ))}
                                     </ul>
                                 ) : (
