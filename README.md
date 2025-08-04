@@ -23,8 +23,8 @@ Our platform creates a **community-driven ecosystem** where users can track goal
 ---
 
 ## 🚀 **Live Demo**
-🔗 **Client:** [https://fitness-tracker-d03b6.web.app/](#)  
-🔗 **Server:** [https://fitness-tracker-server-red.vercel.app/](#)  
+🔗 **Client:** [https://fitness-tracker-d03b6.web.app/]()  
+🔗 **Server:** [https://fitness-tracker-server-red.vercel.app/]()  
 
 ---
 
