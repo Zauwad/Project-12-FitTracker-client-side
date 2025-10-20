@@ -42,7 +42,7 @@ const Community = () => {
             {/* Posts List */}
             <div className="grid gap-6">
                 {posts.map((post) => (
-                    <div key={post._id} className="border rounded-lg p-4 shadow-md bg-gray-500">
+                    <div key={post._id} className=" p-4 bg-[#2C2C30]/20 shadow-xl rounded-xl">
                         <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
                             {post.title}
                             {post.role === "admin" && (

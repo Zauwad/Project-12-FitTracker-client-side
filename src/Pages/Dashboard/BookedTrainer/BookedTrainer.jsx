@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../../../hooks/UseAxios";
-import useAuth from "../../../hooks/UseAuth";
+import useAuth from "../../../hooks/useAuth";
 
 
 const BookedTrainer = () => {
@@ -56,7 +56,7 @@ const BookedTrainer = () => {
 
   return (
     <section className="max-w-5xl mx-auto py-10 px-4">
-      <h2 className="text-3xl font-bold mb-6 text-center">🎯 Your Booked Trainers</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center text-black">🎯 Your Booked Trainers</h2>
 
       {bookedTrainers.map((booking) => (
         <div key={booking._id} className="border rounded-lg p-5 shadow-lg bg-gray-500 mb-6">

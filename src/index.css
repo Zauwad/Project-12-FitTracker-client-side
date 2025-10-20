@@ -1,2 +1,47 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import url('https://fonts.googleapis.com/css2?family=Armata&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Yeon+Sung&display=swap');
+
+
+body {
+  background-color: #09090B;
+  color: white;
+}
+
+
+body {
+  font-family: "Armata", sans-serif;
+  font-weight: 400;
+}
+
+.btn-primary {
+  background-color: #17CF63;
+  border-color: #17CF63;
+  color: #0F0F0F;
+  font-weight:600;
+  font-size: 14;
+  box-shadow: 0 0 30px rgba(23, 207, 99, .5);
+}
+
+.text-primary {
+  color: #17CF63;
+}
+
+.btn-primary:hover {
+  scale: 105%;
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)
+      /* cubic-bezier(0.4, 0, 0.2, 1) */
+    );
+  transition-duration: var(--tw-duration, var(--default-transition-duration)
+      /* 150ms */
+    );
+  box-shadow: 0 0 30px rgba(23, 207, 99);
+}
+
+
+
+
+
+
+

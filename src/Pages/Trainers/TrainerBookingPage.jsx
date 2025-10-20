@@ -81,7 +81,7 @@ const TrainerBookingPage = () => {
   }
 
   return (
-    <section className="py-16 bg-base-200 min-h-screen">
+    <section className="py-16  -200 min-h-screen">
       <div className="max-w-4xl mx-auto px-6 bg-gray-500 p-8 rounded-xl shadow-lg">
         <h2 className="text-3xl font-bold text-primary mb-4">
           Booking with {trainerName}

@@ -87,11 +87,11 @@ const AddNewSlot = () => {
     }
 
     return (
-        <section className="max-w-4xl mx-auto p-6 bg-base-200 rounded-xl shadow-lg mt-10">
+        <section className="max-w-4xl mx-auto p-6  -200 rounded-xl shadow-lg mt-10">
             <h2 className="text-3xl font-bold text-center mb-6">➕ Add New Slot</h2>
 
             {/* Trainer Info (Read-Only) */}
-            <div className="bg-base-100 p-4 rounded-lg mb-6">
+            <div className=" -100 p-4 rounded-lg mb-6">
                 <p><strong>Name:</strong> {trainer.name}</p>
                 <p><strong>Email:</strong> {trainer.email}</p>
                 <p><strong>Experience:</strong> {trainer.experience} Years</p>

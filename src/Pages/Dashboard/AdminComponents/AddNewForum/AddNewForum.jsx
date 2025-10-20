@@ -44,7 +44,7 @@ const AddNewForum = () => {
   };
 
   return (
-    <section className="max-w-3xl mx-auto py-12 px-6 bg-base-200 rounded-lg shadow">
+    <section className="max-w-3xl mx-auto py-12 px-6  -200 rounded-lg shadow">
       <h2 className="text-3xl font-bold mb-6 text-center">📝 Add New Forum Post</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">

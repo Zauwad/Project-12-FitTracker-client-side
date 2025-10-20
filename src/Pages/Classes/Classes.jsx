@@ -27,10 +27,17 @@ const Classes = () => {
   if (isError) return <p className="text-center py-10 text-red-500">Failed to load classes.</p>;
 
   return (
-    <section className="py-16 bg-base-200">
+    <section className="py-16  -200">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-primary text-center mb-6">🏋️ All Fitness Classes</h2>
-        <p className="text-lg text-gray-600 text-center mb-6">Choose from a variety of classes to achieve your fitness goals!</p>
+
+        {/* upper text */}
+        <div className="text-center">
+          <h3 className="text-[#17CF63] opacity-80 text-xs mb-2 uppercase tracking-widest">classes</h3>
+
+          <h2 className="text-4xl font-extrabold mb-3">All Fitness Classes</h2>
+
+          <h3 className="text-[#9F9FA8] opacity-80 text-sm mb-12">Choose from a variety of classes to achieve your fitness goals!</h3>
+        </div>
 
         {/* ✅ Search Bar */}
         <div className="flex justify-center mb-8">
@@ -49,15 +56,15 @@ const Classes = () => {
         {/* ✅ Classes Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {classes.map((cls) => (
-            <div key={cls._id} className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition">
+            <div key={cls._id} className="bg-[#2C2C30]/20 shadow-xl rounded-xl overflow-hidden hover:shadow-2xl transition">
               <img src={cls.image} alt={cls.name} className="w-full h-56 object-cover" />
               <div className="p-5 text-left">
-                <h3 className="text-xl font-bold text-gray-800">{cls.name}</h3>
-                <p className="text-gray-600 mt-2">{cls.details}</p>
-                <p className="mt-3 text-sm text-gray-700"><strong>Duration:</strong> {cls.duration}</p>
-                <p className="text-sm text-gray-700"><strong>Level:</strong> {cls.level}</p>
-                <p className="text-sm text-gray-700"><strong>Trainer Count:</strong> {cls.trainers?.length}</p>
-                <p className="mt-3 font-semibold text-primary">🔥 Bookings: {cls.totalBookings || 0}</p>
+                <h3 className="text-xl font-bold ]">{cls.name}</h3>
+                <p className="text-[#9F9FA8] mt-2">{cls.details}</p>
+                <p className="mt-3 text-sm text-[#9F9FA8]"><strong>Duration:</strong> {cls.duration}</p>
+                <p className="text-sm text-[#9F9FA8]"><strong>Level:</strong> {cls.level}</p>
+                <p className="text-sm text-[#9F9FA8]"><strong>Trainer Count:</strong> {cls.trainers?.length}</p>
+                <p className="mt-3 font-semibold text-primary opacity-80">🔥 Bookings: {cls.totalBookings || 0}</p>
 
                 {/* ✅ Trainer Avatars */}
                 {cls.trainers?.length > 0 && (
@@ -69,7 +76,7 @@ const Classes = () => {
                         alt={trainer.name}
                         title={trainer.name}
                         onClick={() => navigate(`/trainers/${trainer._id}`)}
-                        className="w-10 h-10 rounded-full border-2 border-primary cursor-pointer hover:scale-110 transition"
+                        className="size-10 rounded-full border-2 border-[#17CF63] cursor-pointer hover:scale-110 transition"
                       />
                     ))}
                   </div>

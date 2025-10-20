@@ -3,7 +3,7 @@ import { FaDumbbell, FaUsers, FaHeartbeat } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section className="bg-base-200 py-16">
+    <section className=" -200 py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
         
         {/* Heading */}

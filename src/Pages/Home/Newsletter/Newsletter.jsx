@@ -7,13 +7,11 @@ const Newsletter = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // ✅ Handle Input Change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // ✅ Handle Form Submit
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -37,17 +35,25 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-500">
-      <div className="max-w-3xl mx-auto text-center px-6">
-        <h2 className="text-3xl font-bold text-primary mb-3">📧 Subscribe to Our Newsletter</h2>
-        <p className="text-gray-600 mb-6">
+    <section className="py-12 sm:py-16 lg:py-20">
+      {/* ✅ Matches Feature Section Alignment */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-r from-[#0E0E0E] via-[#111] to-[#0E0E0E] rounded-2xl shadow-lg py-12">
+        <h3 className="text-[#17CF63] opacity-80 text-xs mb-2 tracking-widest uppercase">
+          NEWSLETTER
+        </h3>
+
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3">
+          📧 Subscribe to Our Newsletter
+        </h2>
+
+        <h3 className="text-[#9F9FA8] opacity-80 text-sm sm:text-base mb-8 sm:mb-12">
           Stay updated with the latest fitness tips, trainer updates, and special offers.
-        </p>
+        </h3>
 
         {/* ✅ Subscription Form */}
         <form
           onSubmit={handleSubscribe}
-          className="bg-black shadow-lg rounded-lg p-6 flex flex-col sm:flex-row gap-3 justify-center"
+          className="shadow-lg rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row gap-3 justify-center items-center bg-[#2C2C30]/20 max-w-3xl mx-auto"
         >
           <input
             type="text"
@@ -56,7 +62,7 @@ const Newsletter = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="flex-1 border px-4 py-2 rounded focus:outline-none"
+            className="flex-1 border border-gray-600 px-4 py-2 rounded focus:outline-none w-full"
           />
           <input
             type="email"
@@ -65,7 +71,7 @@ const Newsletter = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="flex-1 border px-4 py-2 rounded focus:outline-none"
+            className="flex-1 border border-gray-600 px-4 py-2 rounded focus:outline-none w-full"
           />
           <button
             type="submit"
@@ -76,7 +82,6 @@ const Newsletter = () => {
           </button>
         </form>
 
-        {/* ✅ Success / Error Message */}
         {message && <p className="mt-4 text-lg">{message}</p>}
       </div>
     </section>

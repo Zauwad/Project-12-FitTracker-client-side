@@ -20,19 +20,21 @@ const Trainers = () => {
     if (isError) return <p className="text-center py-10 text-red-500">Failed to load trainers</p>;
 
     return (
-        <section className="py-16 bg-base-200">
+        <section className="py-16  -200">
             <div className="max-w-6xl mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold text-primary mb-6">👯 Meet Our Trainers</h2>
-                <p className="text-lg text-gray-600 mb-10">
-                    Learn from experienced professionals who are here to guide your fitness journey.
-                </p>
+
+                <h3 className="text-[#17CF63] opacity-80 text-xs mb-2 uppercase tracking-widest">coaches</h3>
+                
+                <h2 className="text-4xl font-extrabold mb-3">Meet Our Trainers</h2>
+
+                <h3 className="text-[#9F9FA8] opacity-80 text-sm mb-12">Learn from experienced professionals who are here to guide your fitness journey.</h3>
 
                 {/* Trainers Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {trainers.map((trainer) => (
                         <div
                             key={trainer._id}
-                            className="bg-gray-500 shadow-lg rounded-xl p-6 hover:shadow-2xl transition duration-300"
+                            className="card bg-[#2C2C30]/20 shadow-xl rounded-xl p-6 hover:shadow-2xl transition duration-300"
                         >
                             {/* Trainer Image */}
                             <img
@@ -42,17 +44,17 @@ const Trainers = () => {
                             />
 
                             {/* Trainer Info */}
-                            <h3 className="text-2xl font-bold text-gray-800">{trainer.name}</h3>
-                            <p className="text-gray-500 mt-1">🏆 {trainer.experience} Years Experience</p>
+                            <h3 className="text-2xl font-bold ">{trainer.name}</h3>
+                            <p className="text-[#9F9FA8] mt-1">🏆 {trainer.experience} Years Experience</p>
 
                             {/* Days & Classes */}
-                            <div className="text-sm text-gray-600 mt-3 text-left">
+                            <div className="text-sm text-[#9F9FA8] mt-3 text-left">
                                 <p><strong>📅 Days:</strong> {trainer.availableDays?.join(", ") || "N/A"}</p>
                                 <p><strong>🎯 Classes:</strong> {trainer.expertise?.join(", ") || "N/A"}</p>
                             </div>
 
                             {/* Available Slots */}
-                            <div className="text-sm text-gray-600 mt-3 text-left">
+                            <div className="text-sm text-[#9F9FA8] mt-3 text-left">
                                 <p className="font-semibold">🕒 Available Slots:</p>
                                 {trainer.availableSlots?.length > 0 ? (
                                     <ul className="list-disc list-inside">
